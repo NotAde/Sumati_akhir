@@ -1,0 +1,323 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("asset/BGserver.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #0c0c2c; /* fallback */
+}
+
+  .main-header {
+    background-color: #030a44;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+  
+  .user-id {
+    font-size: 1.2rem;
+  }
+  
+  .logo {
+    height: 40px;
+  }
+  
+  .profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  
+/* Default desktop nav */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000a35;
+  padding: 10px 20px;
+  position: relative;
+  position: relative; /* diperlukan agar child absolute (nav-links) ditumpuk dari sini */
+  z-index: 999;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hamburger menu button */
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #000a35;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      border-top: 1px solid #444;
+      z-index: 1000; /* ✅ memastikan tampil di atas */
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #000a35;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+  .server-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 700px;
+    margin: 40px auto;
+  }
+  
+  .server-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #00ff88; /* garis hijau terang */
+    border-radius: 16px;
+    padding: 30px 24px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 12px rgba(0, 255, 136, 0.1);
+    color: white;
+    margin-bottom: 28px; /* atau 24px/30px sesuai selera */
+  }
+  
+  .status-indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .server-info {
+    flex-grow: 1;
+  }
+  
+  .server-info h3 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+  }
+  
+  .server-info p {
+    margin: 4px 0;
+    font-size: 14px;
+  }
+  
+  .status-text {
+    font-weight: bold;
+  }
+  
+  .manage-btn {
+    background-color: #2196f3;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+      display: block;
+      margin: 12px auto 0 auto;
+      padding: 6px 16px;
+      background-color: #1e88e5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+    
+    
+  }
+  
+  .manage-btn:hover {
+    background-color: #1976d2;
+  }
+  .disabled-btn {
+    background-color: #888 !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .back-btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #00e676;
+  text-decoration: none;
+  border: 2px solid #00e676;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+  margin: 20px;
+}
+
+.back-btn:hover {
+  background-color: #00e676;
+  color: #0e1142;
+}
+.add-project-btn {
+  background-color: #00e676;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.project-form input[type="text"],
+.project-form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.project-card {
+  background-color: #ffffff10;
+  padding: 16px;
+  border-radius: 12px;
+  width: 180px;
+  color: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+input[type="file"] {
+  margin-top: 10px;
+  color: white;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #12153c;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  position: relative;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="file"],
+.modal-content input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.modal-content input[type="submit"] {
+  background-color: #00e676;
+  color: #12153c;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.add-project-btn {
+  background-color: #00e676;
+  color: #12153c;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 20px 0;
+}
+
+.add-project-btn:hover {
+  background-color: #00c767;
+}
+.danger-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.danger-btn:hover {
+  background-color: #c62828;
+}

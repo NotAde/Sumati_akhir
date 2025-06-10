@@ -1,0 +1,117 @@
+/* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #000041, #000066);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+} 
+/* Logo utama */
+.logo img {
+  width: 200px;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Login box */
+.regist-box {
+  background: linear-gradient(to bottom right, #0e1c66, #3a52b5);
+  padding: 30px 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+}
+
+#regf{
+    position: relative;
+    bottom: 10px;
+}
+
+/* Input container */
+.input-container {
+  position: relative;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input[type="submit"] {
+  background-color: #1f2bd8;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: #0c1db8;
+}
+
+/* Bottom text */
+.bottom-text {
+  margin-top: 15px;
+  font-size: 14px;
+  position: relative;
+  bottom: 40px;
+  color: white;
+}
+
+.bottom-text a {
+  color: #ccc;
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 20px 15px;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../resource/backgrounds.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+} 
+@media (max-width: 768px) {
+  .background {
+    background-position: center top;
+  }
+}
